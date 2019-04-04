@@ -1,49 +1,67 @@
 package com.OBI;
+
 import java.time.LocalDateTime;
+import java.util.HashMap;
 
 public class Flight {
-	
-	private String departureAirport;
-	private String arrivalAirport;
-	private int amountOfSeats;
-	private LocalDateTime dateTime;
-	
-	private Flight (String deA, String arA, int amOS, LocalDateTime dt ) {
-		setDepartureAirport(deA);
-		setArrivalAirport(arA);
-		setAmountOfSeats(amOS);
-		setDateTime(dt);
+
+	private Airport departureAirport;
+	private Airport arrivalAirport;
+	int availableSeats;
+	private LocalDateTime departureDateTime;
+	private LocalDateTime arrivalDateTime;
+
+	HashMap<String, LocalDateTime> arrival = new HashMap<String, LocalDateTime>();
+
+	HashMap<String, LocalDateTime> departure = new HashMap<String, LocalDateTime>();
+
+	public Flight(Airport departureAirport, Airport arrivalAirport, int availableSeats,
+			LocalDateTime departureDateTime) {
+		this.setDepartureAirport(departureAirport);
+		this.setArrivalAirport(arrivalAirport);
+		this.availableSeats = availableSeats;
+		this.setDepartureDateTime(departureDateTime);
 	}
 
-	public String getDepartureAirport() {
-		return departureAirport;
-	}
-
-	public void setDepartureAirport(String departureAirport) {
-		this.departureAirport = departureAirport;
-	}
-
-	public String getArrivalAirport() {
+	public Airport getArrivalAirport() {
 		return arrivalAirport;
 	}
 
-	public void setArrivalAirport(String arrivalAirport) {
+	public Airport getDepartureAirport() {
+		return departureAirport;
+	}
+
+	public void setArrivalAirport(Airport arrivalAirport) {
 		this.arrivalAirport = arrivalAirport;
 	}
 
-	public int getAmountOfSeats() {
-		return amountOfSeats;
+	public void setDepartureAirport(Airport departureAirport) {
+		this.departureAirport = departureAirport;
 	}
 
-	public void setAmountOfSeats(int amountOfSeats) {
-		this.amountOfSeats = amountOfSeats;
+	public LocalDateTime getArrivalDateTime() {
+		return arrivalDateTime;
 	}
 
-	public LocalDateTime getDateTime() {
-		return dateTime;
+	public void setArrivalDateTime(LocalDateTime arrivalDateTime) {
+		this.arrivalDateTime = arrivalDateTime;
 	}
 
-	public void setDateTime(LocalDateTime dateTime) {
-		this.dateTime = dateTime;
+	public LocalDateTime getDepartureDateTime() {
+		return departureDateTime;
+	}
+
+	public void setDepartureDateTime(LocalDateTime departureDateTime) {
+		this.departureDateTime = departureDateTime;
+	}
+
+	public int getAvailableSeats() {
+		return availableSeats;
+	}
+
+	@Override
+	public String toString() {
+		return this.departureAirport + " , " + this.arrivalAirport + " , " + this.departureDateTime + " , "
+				+ this.arrivalDateTime;
 	}
 }
