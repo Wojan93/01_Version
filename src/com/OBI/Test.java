@@ -17,9 +17,9 @@ public class Test {
 		Passenger passenger4 = new Passenger("Anna Domagala", "SJC291498", LocalDate.of(1989, Month.MAY, 3));
 		
 		DataStorage storeFirst = new DataStorage("First");
-		storeFirst.addPassenger("Piotr Kubica", "TRF690204", LocalDate.of(1991, Month.FEBRUARY,19));
-		storeFirst.addPassenger("Jerzy Kosiñski", "CYY369123",LocalDate.of(1995, Month.APRIL, 1)); 
-		storeFirst.addPassenger("Anna Domagala", "SJC291498", LocalDate.of(1989, Month.MAY, 3));
+		storeFirst.addPassengerObj(passenger2);
+		storeFirst.addPassengerObj(passenger3);
+		storeFirst.addPassengerObj(passenger4);
 		
 		Flight flight2 = new Flight(airport2, airport3, 200, LocalDateTime.of(2019, Month.JANUARY, 12, 10, 40, 00));
 		Flight flight3 = new Flight(airport3, airport4, 230, LocalDateTime.of(2019, Month.JANUARY, 1, 8, 00, 00));
